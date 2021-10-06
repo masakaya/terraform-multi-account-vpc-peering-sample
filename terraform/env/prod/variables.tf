@@ -12,7 +12,8 @@ variable "region" {
 
 variable "tags" {
   default = {
+    terraform = "true"
     env = "prod"
-    product = "multi-account-vpc-peering-sample-prod"
+    product = var.project_name
   }
 }
