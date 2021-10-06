@@ -5,11 +5,11 @@ module "vpc" {
 
   name = "${var.project_name}-vpc"
 
-  cidr = "10.0.0.0/16"
+  cidr = "172.18.0.0/16"
 
   azs             = ["ap-northeast-1a", "ap-northeast-1c", "ap-northeast-1d"]
-  private_subnets = ["10.0.96.0/24", "10.0.128.0/24", "10.0.160.0/24"]
-  public_subnets  = ["10.0.0.0/24", "10.0.32.0/24", "10.0.64.0/24"]
+  private_subnets = ["172.18.96.0/19", "172.17.128.0/19", "172.18.160.0/19"]
+  public_subnets  = ["172.18.0.0/19", "172.18.32.0/19", "172.18.64.0/19"]
 
   # 検証用のためNAT G/Wは一つ設定してルーティングさせる( EIPも自動生成する )
   enable_nat_gateway = true
