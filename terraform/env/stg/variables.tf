@@ -14,6 +14,6 @@ variable "tags" {
   default = {
     terraform = "true"
     env = "stg"
-    product = var.project_name
+    product = "multi-account-vpc-peering-sample"
   }
 }
