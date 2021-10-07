@@ -22,12 +22,13 @@ module "rds" {
 
   multi_az               = false
   subnet_ids             = module.vpc.database_subnets
-
   major_engine_version = "5.7"
 
   # 削除OK、スナップショット取らない
   deletion_protection = false
-  skip_final_snapshot = false
+  skip_final_snapshot = true
+
+  apply_immediately=true
 
   tags = var.tags
 }
