@@ -24,6 +24,8 @@ module "rds" {
   subnet_ids             = module.vpc.database_subnets
   major_engine_version = "5.7"
 
+  vpc_security_group_ids = [ module.security_group.security_group_id ]
+
   # 削除OK、スナップショット取らない
   deletion_protection = false
   skip_final_snapshot = true
